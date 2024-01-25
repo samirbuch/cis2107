@@ -14,12 +14,14 @@ int main() {
 
     float employeeNum;
     float hourlySalary;
-    int weeklyTime;
-    int regularHours = 0;
-    int overtimeHours;
+    float weeklyTime;
+
+    // Junk variable used to store junk values lol
+    double _throwaway;
 
     printf("\tEnter Employee Number: ");
     // TODO: clang-tidy mentions using strtol()
+    // cert-err34-c
     scanf("%f", &employeeNum);
 
     if(employeeNum <= 0) {
@@ -28,7 +30,6 @@ int main() {
         exit(1);
     }
 
-    double _throwaway;
     double employeeNumFP = modf(employeeNum, &_throwaway);
     if(employeeNumFP != 0) {
         printf("\t\nThis is not a valid Employee Number.\n\tPlease run the program again\n");
@@ -46,7 +47,16 @@ int main() {
     }
 
     printf("\tEnter Weekly Time: ");
-    scanf("%d", &weeklyTime);
+    scanf("%f", &weeklyTime);
+
+    float regularHours;
+    float overtimeHours = 0;
+    if(weeklyTime > 40) {
+        regularHours = 40;
+        overtimeHours = weeklyTime - 40;
+    } else {
+        regularHours = weeklyTime;
+    }
 
     if(weeklyTime <= 0) {
         printf("\t\nThis is not a weekly time.\n\tPlease run the program again\n");
@@ -54,15 +64,11 @@ int main() {
         exit(1);
     }
 
-    if(weeklyTime > 40) {
-        regularHours = 40;
-    }
-
     printf("==============================\n");
 
     printf("\tEmployee #: %d\n", (int) employeeNum);
     printf("\tHourly Salary: $%.2f\n", hourlySalary);
-    printf("\tWeekly Time: %.1d hours\n", weeklyTime);
+    printf("\tWeekly Time: %.1f hours\n", weeklyTime);
 
     float regularPay = hourlySalary * (float) regularHours;
     printf("\tRegular Pay: $%.2f\n", regularPay);
@@ -70,7 +76,7 @@ int main() {
     float overtimePay = 0;
 
     if(weeklyTime > 40) {
-        overtimeHours = weeklyTime - 40;
+        overtimeHours = weeklyTime - 40.0;
         overtimePay = overtimeHours * (hourlySalary * 1.5);
     }
     printf("\tOvertime Pay: $%.2f\n", overtimePay);
