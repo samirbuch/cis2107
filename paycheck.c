@@ -64,7 +64,7 @@ int main() {
         exit(1);
     }
 
-    printf("==============================\n");
+    printf("\t==============================\n");
 
     printf("\tEmployee #: %d\n", (int) employeeNum);
     printf("\tHourly Salary: $%.2f\n", hourlySalary);
@@ -84,7 +84,7 @@ int main() {
     float netPay = regularPay + overtimePay;
     printf("\tNet Pay: $%.2f\n", netPay);
 
-    printf("==============================\n");
+    printf("\t==============================\n");
 
     printCloser();
     return 0;
