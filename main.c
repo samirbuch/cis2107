@@ -1,10 +1,7 @@
 #include <stdio.h>
+#include <stdbool.h> // MIND BLOWING??
 
 // Main function. Return 0 for successful exit.
 int main() {
-    char str[50];
-    printf("Enter your name:\n> ");
-    scanf("%s", &str);
-    printf("Hello, %s!\n", str);
-    return 0;
+    bool boolean = true;
 }
