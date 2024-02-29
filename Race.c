@@ -61,27 +61,17 @@ int main() {
 
 //Prints the position of the H and T
 void printRace(int hPos, int tPos) {
-    int hPosPadLeft = hPos - 1;
-    int tPosPadLeft = tPos - 1;
-    int hPosPadRight = 70 - hPos;
-    int tPosPadRight = 70 - tPos;
-
-    printf("|");
-    for (int i = 0; i < hPosPadLeft; i++) printf("-");
-    printf("H");
-    for (int i = 0; i < hPosPadRight; i++) printf("-");
-    printf("|\n");
-
-    printf("|");
-    for (int i = 0; i < tPosPadLeft; i++) printf("-");
-    printf("T");
-    for (int i = 0; i < tPosPadRight; i++) printf("-");
-    printf("|\n");
-
     if (hPos == tPos) {
         for (int i = 0; i < hPos; i++) printf(" ");
-        printf("OUCH!!!\n");
+        printf("OUCH!!!");
+    } else {
+        for (int i = 0; i < 70; i++) {
+            printf(" ");
+            if (i == hPos) printf("H");
+            if (i == tPos) printf("T");
+        }
     }
+    printf("\n");
 }
 
 //Controls the tortoise movement
