@@ -65,7 +65,7 @@ void printRace(int hPos, int tPos) {
         for (int i = 0; i < hPos; i++) printf(" ");
         printf("OUCH!!!");
     } else {
-        for (int i = 0; i < 70; i++) {
+        for (int i = 0; i <= 70; i++) {
             printf(" ");
             if (i == hPos) printf("H");
             if (i == tPos) printf("T");
