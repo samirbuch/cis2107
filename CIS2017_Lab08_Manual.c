@@ -103,7 +103,6 @@ int main() {
 
 // 1.(Displaying Strings in Uppercase and Lowercase) 
 void *upperLower(const char *s) {
-
     size_t sLen = strlen(s);
 
     // convert to uppercase
@@ -121,8 +120,16 @@ void *upperLower(const char *s) {
 
 // 2.(Converting Strings to Integers for Calculations) 
 int convertStrtoInt(const char *s1, const char *s2, const char *s3, const char *s4) {
+    // The only strings being passed in are a single character long, so we don't need to worry about
+    // indexing into lengths beyond that. Just use the zeroth index. Nbd.
 
+    // Minus 48 because, for example, "6" = ascii decimal value 54
+    int s1Int = (int) s1[0] - 48;
+    int s2Int = (int) s2[0] - 48;
+    int s3Int = (int) s3[0] - 48;
+    int s4Int = (int) s4[0] - 48;
 
+    return s1Int + s2Int + s3Int + s4Int;
 }
 
 //3.(Converting Strings to Floating Point for Calculations) 
