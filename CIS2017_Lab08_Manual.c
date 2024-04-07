@@ -41,7 +41,7 @@ void countAlpha(char *string);
 
 void startsWithB(char *string[], int size);
 
-void endsWithed(char *string[]);
+void endsWithed(char *string[], int size);
 
 int main() {
 
@@ -97,7 +97,7 @@ int main() {
     startsWithB(series, sizeof(series) / sizeof(series[0]));
 
     //test for endsWithed
-    endsWithed(series);
+    endsWithed(series, sizeof(series) / sizeof(series[0]));
 
 }
 
@@ -321,17 +321,17 @@ int countChar(char *line, char c) {
 
 //11.(Counting the Letters of the Alphabet in a String) 
 void countAlpha(char *string) {
-    int counts[26] = { 0 };
+    int counts[26] = {0};
 
-    for(int i = 0; i < strlen(string); i++) {
+    for (int i = 0; i < strlen(string); i++) {
         char c = (char) tolower(string[i]);
-        if(c < 'a' || c > 'z') continue; // not alphabet.
+        if (c < 'a' || c > 'z') continue; // not alphabet.
 
         int index = (int) c - 97;
         counts[index]++;
     }
 
-    for(int i = 0; i < 26; i++) {
+    for (int i = 0; i < 26; i++) {
         printf("%c,%c | %d\n", i + 65, i + 97, counts[i]);
     }
 
@@ -342,7 +342,7 @@ int countWords(char *string) {
     char *token = strtok(string, " \n");
 
     int count = 0;
-    while(token != NULL) {
+    while (token != NULL) {
         count++;
         token = strtok(NULL, " \n");
     }
@@ -352,15 +352,21 @@ int countWords(char *string) {
 
 //13.(Strings Starting with "b") 
 void startsWithB(char *string[], int size) {
-    for(int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) {
         char *str = string[i];
-        if(tolower(str[0]) == 'b') printf("%s ", str);
+        if (tolower(str[0]) == 'b') printf("%s ", str);
     }
     puts(" ");
 }
 
 //14.(Strings Ending with "ed") 
-void endsWithed(char *string[]) {
+void endsWithed(char *string[], int size) {
+    for(int i = 0; i < size; i++) {
+        char *str = string[i];
+        size_t length = strlen(str);
 
-
+        int result = strcmp(str + length - 2, "ed");
+        if(result == 0) printf("%s ", str);
+    }
+    puts("");
 }
