@@ -286,14 +286,14 @@ int countSubstr(char *line, char *sub) {
 
     // Sliding window algorithm (cursed)
     size_t numWindows = strlen(line) - strlen(sub) + 1;
-    for(int i = 0; i < numWindows; i++) {
+    for (int i = 0; i < numWindows; i++) {
         // Create a buffer to hold the current window's string
         char *buf = calloc(strlen(sub), sizeof(char));
         // Copy in the window's string (line + index)
         strncpy(buf, line + i, strlen(sub)); // only copy in strlen(sub) characters
 
         char *found = strstr(buf, sub);
-        if(found != NULL) {
+        if (found != NULL) {
             numSubstrings++;
         }
 
@@ -305,7 +305,17 @@ int countSubstr(char *line, char *sub) {
 
 //10.(Counting the Occurrences of a Character) 
 int countChar(char *line, char c) {
+    char *found = strchr(line, c);
 
+    int occurrences = 0;
+    while(found != NULL) {
+        printf("%s\n", found);
+
+        found = strchr(found + 1, c);
+        occurrences++;
+    }
+
+    return occurrences;
 
 }
 
