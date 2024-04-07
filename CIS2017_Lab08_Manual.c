@@ -339,8 +339,15 @@ void countAlpha(char *string) {
 
 //12.(Counting the Number of Words in a String) 
 int countWords(char *string) {
+    char *token = strtok(string, " \n");
 
+    int count = 0;
+    while(token != NULL) {
+        count++;
+        token = strtok(NULL, " \n");
+    }
 
+    return count;
 }
 
 //13.(Strings Starting with "b") 
