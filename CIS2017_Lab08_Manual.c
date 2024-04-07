@@ -106,8 +106,8 @@ void *upperLower(const char *s) {
     size_t sLen = strlen(s);
 
     // convert to uppercase
-    char *upper = calloc(sLen, sLen * sizeof(char));
-    char *lower = calloc(sLen, sLen * sizeof(char));
+    char *upper = calloc(sLen, sizeof(char));
+    char *lower = calloc(sLen, sizeof(char));
     // hey why the fuck did I have to use calloc here instead of just a bunch of arrays?
     // it was spitting back some corrupted bullshit every time I tried to use
     // a standard array. wtf.
@@ -282,8 +282,25 @@ void reverse(char *text) {
 
 //9.(Counting the Occurrences of a Substring) 
 int countSubstr(char *line, char *sub) {
+    int numSubstrings = 0;
 
+    // Sliding window algorithm (cursed)
+    size_t numWindows = strlen(line) - strlen(sub) + 1;
+    for(int i = 0; i < numWindows; i++) {
+        // Create a buffer to hold the current window's string
+        char *buf = calloc(strlen(sub), sizeof(char));
+        // Copy in the window's string (line + index)
+        strncpy(buf, line + i, strlen(sub)); // only copy in strlen(sub) characters
 
+        char *found = strstr(buf, sub);
+        if(found != NULL) {
+            numSubstrings++;
+        }
+
+        free(buf);
+    }
+
+    return numSubstrings;
 }
 
 //10.(Counting the Occurrences of a Character) 
