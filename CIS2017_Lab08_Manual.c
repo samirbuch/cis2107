@@ -17,9 +17,9 @@
 //functions prototypes
 void *upperLower(const char *s);
 
-int convertStrtoInt(const char *s1, const char *s2, const char *s3, const char *s4);
+int convertStrToInt(const char *s1, const char *s2, const char *s3, const char *s4);
 
-float convertStrtoFloat(const char *s1, const char *s2, const char *s3, const char *s4);
+float convertStrToFloat(const char *s1, const char *s2, const char *s3, const char *s4);
 
 void compareStr(const char *s1, const char *s2);
 
@@ -52,11 +52,11 @@ int main() {
     const char test[] = "This iS A Test";
     upperLower(test);
 
-    //test for convertStrtoInt
-    printf("\n\nThe sum of 4 strings is: %d", convertStrtoInt("3", "4", "5", "6"));
+    //test for convertStrToInt
+    printf("\n\nThe sum of 4 strings is: %d", convertStrToInt("3", "4", "5", "6"));
 
-    //test for convertStrtoFloat
-    printf("\n\nThe sum of 4 strings is: %.2f", convertStrtoFloat("3.5", "4.5", "5.5", "6.5"));
+    //test for convertStrToFloat
+    printf("\n\nThe sum of 4 strings is: %.2f", convertStrToFloat("3.5", "4.5", "5.5", "6.5"));
 
     //test for compareStr
     compareStr("Test1", "Test2");
@@ -119,7 +119,7 @@ void *upperLower(const char *s) {
 }
 
 // 2.(Converting Strings to Integers for Calculations) 
-int convertStrtoInt(const char *s1, const char *s2, const char *s3, const char *s4) {
+int convertStrToInt(const char *s1, const char *s2, const char *s3, const char *s4) {
     // The only strings being passed in are a single character long, so we don't need to worry about
     // indexing into lengths beyond that. Just use the zeroth index. Nbd.
 
@@ -133,9 +133,24 @@ int convertStrtoInt(const char *s1, const char *s2, const char *s3, const char *
 }
 
 //3.(Converting Strings to Floating Point for Calculations) 
-float convertStrtoFloat(const char *s1, const char *s2, const char *s3, const char *s4) {
+float convertStrToFloat(const char *s1, const char *s2, const char *s3, const char *s4) {
+    // There's a better way to do this that utilizes strtok, but for the constant data set
+    // of each string only being three characters "ones.tenths", I CBA. Just index.
 
+    // Why 48? Re: convertStrToInt
+    int s1Ones = (int) s1[0] - 48;
+    double s1Tenths = ((int) s1[2] - 48) * 0.1;
 
+    int s2Ones = (int) s2[0] - 48;
+    double s2Tenths = ((int) s2[2] - 48) * 0.1;
+
+    int s3Ones = (int) s3[0] - 48;
+    double s3Tenths = ((int) s3[2] - 48) * 0.1;
+
+    int s4Ones = (int) s4[0] - 48;
+    double s4Tenths = ((int) s4[2] - 48) * 0.1;
+
+    return (float) (s1Ones + s1Tenths + s2Ones + s2Tenths + s3Ones + s3Tenths + s4Ones + s4Tenths);
 }
 
 //4.(Comparing Strings) 
