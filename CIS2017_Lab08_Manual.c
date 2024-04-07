@@ -85,7 +85,7 @@ int main() {
     printf("\nNumber of character %c inside %s: %d\n", w, line1, countChar(line1, w));
 
     //test for countAlpha
-    char str1[] = "Hello it's me.";
+    char str1[] = "Hello it's me."; // https://open.spotify.com/track/3gHFKiDanj4d2rqgHlRFFc?si=e8aa16db285641f3
     countAlpha(str1);
 
     //test for countWords
@@ -308,7 +308,7 @@ int countChar(char *line, char c) {
     char *found = strchr(line, c);
 
     int occurrences = 0;
-    while(found != NULL) {
+    while (found != NULL) {
         printf("%s\n", found);
 
         found = strchr(found + 1, c);
@@ -319,10 +319,21 @@ int countChar(char *line, char c) {
 
 }
 
-
 //11.(Counting the Letters of the Alphabet in a String) 
 void countAlpha(char *string) {
+    int counts[26] = { 0 };
 
+    for(int i = 0; i < strlen(string); i++) {
+        char c = (char) tolower(string[i]);
+        if(c < 'a' || c > 'z') continue; // not alphabet.
+
+        int index = (int) c - 97;
+        counts[index]++;
+    }
+
+    for(int i = 0; i < 26; i++) {
+        printf("%c,%c | %d\n", i + 65, i + 97, counts[i]);
+    }
 
 }
 
