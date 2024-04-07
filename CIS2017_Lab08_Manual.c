@@ -27,7 +27,7 @@ void comparePartialStr(const char *s1, const char *s2, int n);
 
 void randomize(void);
 
-int tokenizeTelNum(char *num);
+void tokenizeTelNum(char *num);
 
 void reverse(char *text);
 
@@ -165,7 +165,7 @@ float convertStrToFloat(const char *s1, const char *s2, const char *s3, const ch
 void compareStr(const char *s1, const char *s2) {
     int compared = strcmp(s1, s2);
 
-    switch(compared) {
+    switch (compared) {
         case -1: {
             puts("s1 is less than s2");
             break;
@@ -189,7 +189,7 @@ void compareStr(const char *s1, const char *s2) {
 void comparePartialStr(const char *s1, const char *s2, int n) {
     int compared = strncmp(s1, s2, n);
 
-    switch(compared) {
+    switch (compared) {
         case -1: {
             puts("s1 is less than s2");
             break;
@@ -211,12 +211,12 @@ void comparePartialStr(const char *s1, const char *s2, int n) {
 
 //6.(Random Sentences) 
 void randomize(void) {
-    char *articles[] = { "a", "one", "some", "any" }; // 4
-    char *nouns[] = { "boy", "girl", "dog", "town", "car" }; // 5
-    char *verbs[] = { "drove", "jumped", "ran", "walked", "skipped" }; // 5
-    char *prepositions[] = { "to", "from", "over", "under", "on" }; // 5
+    char *articles[] = {"a", "one", "some", "any"}; // 4
+    char *nouns[] = {"boy", "girl", "dog", "town", "car"}; // 5
+    char *verbs[] = {"drove", "jumped", "ran", "walked", "skipped"}; // 5
+    char *prepositions[] = {"to", "from", "over", "under", "on"}; // 5
 
-    for(int i = 0; i < 20; i++) {
+    for (int i = 0; i < 20; i++) {
         char *buf = calloc(200, sizeof(char));
 
         strcat(buf, articles[rand() % 4]);
@@ -234,16 +234,32 @@ void randomize(void) {
 
         buf[0] = (char) toupper(buf[0]);
 
-        puts(buf);
+        // short story version
+        printf("%s ", buf);
 
         free(buf);
     }
+    puts("");
 }
 
 //7.(Tokenizing Telephone Numbers) 
-int tokenizeTelNum(char *num) {
+void tokenizeTelNum(char *num) {
+    char delimiters[] = "()-";
 
+    // Area code
+    char *token = strtok(num, delimiters);
+    int areaCode = atoi(token);
 
+    // First part of the phone number
+    token = strtok(NULL, delimiters); // strtok is so weird
+    int fPhoneNum = atoi(token);
+
+    // Last part of the phone number
+    token = strtok(NULL, delimiters);
+    int lPhoneNum = atoi(token);
+
+    printf("Area code: %d, Phone number: %d\n",
+           areaCode, fPhoneNum * 10000 + lPhoneNum);
 }
 
 //8.(Displaying a Sentence with Its Words Reversed) 
