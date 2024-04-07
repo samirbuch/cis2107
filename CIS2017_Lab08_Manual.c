@@ -108,6 +108,11 @@ void *upperLower(const char *s) {
     // convert to uppercase
     char *upper = calloc(sLen, sLen * sizeof(char));
     char *lower = calloc(sLen, sLen * sizeof(char));
+    // hey why the fuck did I have to use calloc here instead of just a bunch of arrays?
+    // it was spitting back some corrupted bullshit every time I tried to use
+    // a standard array. wtf.
+    // heap better ig. the virgin stack skill issue vs the chad heap
+
     for (int i = 0; i < strlen(s); i++) {
         upper[i] = (char) toupper(s[i]);
         lower[i] = (char) tolower(s[i]);
@@ -155,12 +160,50 @@ float convertStrToFloat(const char *s1, const char *s2, const char *s3, const ch
 
 //4.(Comparing Strings) 
 void compareStr(const char *s1, const char *s2) {
+    int compared = strcmp(s1, s2);
 
+    switch(compared) {
+        case -1: {
+            puts("s1 is less than s2");
+            break;
+        }
+        case 0: {
+            puts("s1 is equal to s2");
+            break;
+        }
+        case 1: {
+            puts("s1 is greater than s2");
+            break;
+        }
+        default: {
+            fprintf(stderr, "How did you get here\n");
+            break;
+        }
+    }
 }
 
 //5.(Comparing Portions of Strings) 
 void comparePartialStr(const char *s1, const char *s2, int n) {
+    int compared = strncmp(s1, s2, n);
 
+    switch(compared) {
+        case -1: {
+            puts("s1 is less than s2");
+            break;
+        }
+        case 0: {
+            puts("s1 is equal to s2");
+            break;
+        }
+        case 1: {
+            puts("s1 is greater than s2");
+            break;
+        }
+        default: {
+            fprintf(stderr, "How did you get here\n");
+            break;
+        }
+    }
 }
 
 //6.(Random Sentences) 
