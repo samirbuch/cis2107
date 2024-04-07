@@ -264,8 +264,20 @@ void tokenizeTelNum(char *num) {
 
 //8.(Displaying a Sentence with Its Words Reversed) 
 void reverse(char *text) {
+    char *token = strtok(text, " ");
+    char *words[50];
+    int tokenCount = 0;
 
+    while (token != NULL) {
+        words[tokenCount++] = token;
+        token = strtok(NULL, " ");
+    }
 
+    printf("Reversed: ");
+    for (int i = tokenCount - 1; i >= 0; i--) {
+        printf("%s ", words[i]);
+    }
+    puts("");
 }
 
 //9.(Counting the Occurrences of a Substring) 
