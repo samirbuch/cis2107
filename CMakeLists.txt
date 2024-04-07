@@ -4,5 +4,5 @@ project(cis2107 C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(cis2107
-        Race.c
+        CIS2017_Lab08_Manual.c
 )
