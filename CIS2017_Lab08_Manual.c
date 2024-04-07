@@ -321,17 +321,25 @@ int countChar(char *line, char c) {
 
 //11.(Counting the Letters of the Alphabet in a String) 
 void countAlpha(char *string) {
+    // Create a "map" of letters with their associated frequencies
     int counts[26] = {0};
 
     for (int i = 0; i < strlen(string); i++) {
+        // Get the current character (lowercase) at i
         char c = (char) tolower(string[i]);
-        if (c < 'a' || c > 'z') continue; // not alphabet.
+        // If the character is less than a or greater than z ...
+        if (c < 'a' || c > 'z') continue; // ... it's not alphabet.
 
+        // Lowercase letters begin at ascii decimal 97
         int index = (int) c - 97;
+        // Increment the index of this character in the "map" by one
         counts[index]++;
     }
 
+    // Loop through all letters in the "map"
     for (int i = 0; i < 26; i++) {
+        // Uppercase starts from ascii decimal 65, lowercase from 97
+        // & print the frequency at that letter
         printf("%c,%c | %d\n", i + 65, i + 97, counts[i]);
     }
 
