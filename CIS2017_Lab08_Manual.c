@@ -39,7 +39,7 @@ int countWords(char *string);
 
 void countAlpha(char *string);
 
-void startsWithB(char *string[]);
+void startsWithB(char *string[], int size);
 
 void endsWithed(char *string[]);
 
@@ -94,7 +94,7 @@ int main() {
 
     //test for startsWithB
     char *series[] = {"bored", "hello", "Brother", "manual", "bothered"};
-    startsWithB(series);
+    startsWithB(series, sizeof(series) / sizeof(series[0]));
 
     //test for endsWithed
     endsWithed(series);
@@ -351,9 +351,12 @@ int countWords(char *string) {
 }
 
 //13.(Strings Starting with "b") 
-void startsWithB(char *string[]) {
-
-
+void startsWithB(char *string[], int size) {
+    for(int i = 0; i < size; i++) {
+        char *str = string[i];
+        if(tolower(str[0]) == 'b') printf("%s ", str);
+    }
+    puts(" ");
 }
 
 //14.(Strings Ending with "ed") 
