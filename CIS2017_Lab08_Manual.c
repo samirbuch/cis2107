@@ -56,7 +56,7 @@ int main() {
     printf("\n\nThe sum of 4 strings is: %d", convertStrToInt("3", "4", "5", "6"));
 
     //test for convertStrToFloat
-    printf("\n\nThe sum of 4 strings is: %.2f", convertStrToFloat("3.5", "4.5", "5.5", "6.5"));
+    printf("\n\nThe sum of 4 strings is: %.2f\n", convertStrToFloat("3.5", "4.5", "5.5", "6.5"));
 
     //test for compareStr
     compareStr("Test1", "Test2");
@@ -119,6 +119,9 @@ void *upperLower(const char *s) {
     }
     printf("%s\n", upper);
     printf("%s\n", lower);
+
+    free(upper);
+    free(lower);
 
     return NULL;
 }
@@ -208,8 +211,33 @@ void comparePartialStr(const char *s1, const char *s2, int n) {
 
 //6.(Random Sentences) 
 void randomize(void) {
+    char *articles[] = { "a", "one", "some", "any" }; // 4
+    char *nouns[] = { "boy", "girl", "dog", "town", "car" }; // 5
+    char *verbs[] = { "drove", "jumped", "ran", "walked", "skipped" }; // 5
+    char *prepositions[] = { "to", "from", "over", "under", "on" }; // 5
 
+    for(int i = 0; i < 20; i++) {
+        char *buf = calloc(200, sizeof(char));
 
+        strcat(buf, articles[rand() % 4]);
+        strcat(buf, " ");
+        strcat(buf, nouns[rand() % 5]);
+        strcat(buf, " ");
+        strcat(buf, verbs[rand() % 5]);
+        strcat(buf, " ");
+        strcat(buf, prepositions[rand() % 5]);
+        strcat(buf, " ");
+        strcat(buf, articles[rand() % 4]);
+        strcat(buf, " ");
+        strcat(buf, nouns[rand() % 5]);
+        strcat(buf, ".");
+
+        buf[0] = (char) toupper(buf[0]);
+
+        puts(buf);
+
+        free(buf);
+    }
 }
 
 //7.(Tokenizing Telephone Numbers) 
