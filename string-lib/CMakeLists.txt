@@ -10,4 +10,5 @@ add_executable(string_lib main.c
         lib/num_in_range.c
         lib/diff.c
         lib/shorten.c
+        lib/len_diff.c
 )

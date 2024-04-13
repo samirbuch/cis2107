@@ -54,4 +54,12 @@ int diff(const char* s1, const char* s2);
  */
 void shorten(char* s, int new_len);
 
+/**
+ * Returns the length of s1 minus the length of s2
+ * @param s1 String 1
+ * @param s2 String 2
+ * @return Difference in length
+ */
+size_s len_diff(const char* s1, const char* s2);
+
 #endif //STRING_LIB_STR_UTILS_H

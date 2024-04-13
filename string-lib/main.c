@@ -24,5 +24,7 @@ int main() {
     shorten(realString, 9);
     printf("Shortened string: %s\n", realString);
 
+    printf("Length diff between s1 & s2: %u\n", len_diff(realString, fakeString));
+
     return 0;
 }
