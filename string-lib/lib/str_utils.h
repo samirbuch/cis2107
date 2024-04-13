@@ -47,4 +47,11 @@ size_s num_in_range(const char *s1, char b, char t);
  */
 int diff(const char* s1, const char* s2);
 
+/**
+ * Shortens string s to the new length new_len. If the string is already shorter than new_len, no action is performed.
+ * @param s String to shorten
+ * @param new_len New length
+ */
+void shorten(char* s, int new_len);
+
 #endif //STRING_LIB_STR_UTILS_H

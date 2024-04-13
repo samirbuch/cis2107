@@ -8,4 +8,6 @@ add_executable(string_lib main.c
         lib/str_utils.h
         lib/all_letters.c
         lib/num_in_range.c
-        lib/diff.c)
+        lib/diff.c
+        lib/shorten.c
+)

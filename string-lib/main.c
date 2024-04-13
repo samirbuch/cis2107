@@ -20,5 +20,9 @@ int main() {
     size_s difference = diff(realString, fakeString);
     printf("Diff between: \n\t%s\n\t%s\n%d\n", realString, fakeString, difference);
 
+    // Shorten the real string
+    shorten(realString, 9);
+    printf("Shortened string: %s\n", realString);
+
     return 0;
 }
