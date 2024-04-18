@@ -38,5 +38,11 @@ int main() {
     rm_space(soMuchSpace);
     printf("\"%s\"\n", soMuchSpace);
 
+    char str1[] = "Prof. Ajaj is the greatest!";
+    char str2[] = "Ajaj";
+
+    int foundIndex = find(str1, str2);
+    printf("Found %s index: %d\n", str2, foundIndex);
+
     return 0;
 }

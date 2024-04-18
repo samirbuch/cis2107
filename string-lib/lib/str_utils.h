@@ -23,6 +23,22 @@ size_s s_strlen(const char* str);
 size_s s_strnlen(const char* str, size_s n);
 
 /**
+ * Copy only n characters from the source string into the destination string
+ * @param dest String to copy to
+ * @param src String to copy from
+ * @param n How many characters should be copied
+ */
+void s_strncpy(char* dest, const char* src, size_s n);
+
+/**
+ * Determines if two strings are exactly equal
+ * @param s1 String one to check
+ * @param s2 String two to check
+ * @return 1 if equal, 0 if not
+ */
+int strequal(const char* s1, const char* s2);
+
+/**
  * Returns 1 if all the characters in the string are either upper- or lower-case letters of the alphabet. 0 otherwise.
  * @param s String to test
  * @return 1 or 0
@@ -79,5 +95,13 @@ void rm_right_space(char *s);
  * @param s String to remove whitespace from
  */
 void rm_space(char *s);
+
+/**
+ * Find the index of the first occurrence of n in the string h
+ * @param h The string that gets searched
+ * @param n String to find in h
+ * @return Index to the first occurrence, -1 otherwise
+ */
+int find(char *h, char *n);
 
 #endif //STRING_LIB_STR_UTILS_H
