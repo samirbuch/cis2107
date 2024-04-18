@@ -62,4 +62,22 @@ void shorten(char* s, int new_len);
  */
 size_s len_diff(const char* s1, const char* s2);
 
+/**
+ * Removes whitespace characters from the beginning of s
+ * @param s String to remove whitespace from
+ */
+void rm_left_space(char *s);
+
+/**
+ * Removes whitespace characters from the end of s
+ * @param s String to remove whitespace from
+ */
+void rm_right_space(char *s);
+
+/**
+ * Removes whitespace characters from the beginning and end of s
+ * @param s String to remove whitespace from
+ */
+void rm_space(char *s);
+
 #endif //STRING_LIB_STR_UTILS_H

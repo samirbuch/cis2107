@@ -26,5 +26,17 @@ int main() {
 
     printf("Length diff between s1 & s2: %u\n", len_diff(realString, fakeString));
 
+    char strWithLeftSpaces[] = "        left space!";
+    rm_left_space(strWithLeftSpaces);
+    printf("\"%s\"\n", strWithLeftSpaces);
+
+    char strWithRightSpaces[] = "right spaces!         ";
+    rm_right_space(strWithRightSpaces);
+    printf("\"%s\"\n", strWithRightSpaces);
+
+    char soMuchSpace[] = "       so much space!       ";
+    rm_space(soMuchSpace);
+    printf("\"%s\"\n", soMuchSpace);
+
     return 0;
 }
