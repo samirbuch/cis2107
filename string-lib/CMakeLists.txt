@@ -18,4 +18,5 @@ add_executable(string_lib main.c
         lib/strcpy.c
         lib/strequal.c
         lib/ptr_to.c
+        lib/is_empty.c
 )

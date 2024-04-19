@@ -4,7 +4,7 @@
 
 #include "str_utils.h"
 
-int find(char* h, char* n){
+int find(const char *h, const char *n){
     size_s hLen = s_strlen(h);
     size_s nLen = s_strlen(n);
 

@@ -4,7 +4,7 @@
 
 #include "str_utils.h"
 
-char *ptr_to(char *h, char *n) {
+char *ptr_to(const char *h, const char *n) {
     size_s hLen = s_strlen(h);
     size_s nLen = s_strlen(n);
 
