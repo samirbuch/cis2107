@@ -5,6 +5,7 @@
 #ifndef STRING_LIB_STR_UTILS_H
 #define STRING_LIB_STR_UTILS_H
 
+#define S_NULL ((void *)0)
 typedef unsigned int size_s;
 
 /**
@@ -103,5 +104,13 @@ void rm_space(char *s);
  * @return Index to the first occurrence, -1 otherwise
  */
 int find(char *h, char *n);
+
+/**
+ * Returns a pointer to the first occurrence of n in the string h
+ * @param h The string that gets searched
+ * @param n String to find in h
+ * @return Pointer to first occurrence, NULL otherwise
+ */
+char *ptr_to(char *h, char *n);
 
 #endif //STRING_LIB_STR_UTILS_H

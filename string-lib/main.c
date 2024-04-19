@@ -44,5 +44,8 @@ int main() {
     int foundIndex = find(str1, str2);
     printf("Found %s index: %d\n", str2, foundIndex);
 
+    char *foundPtr = ptr_to(str1, str2);
+    printf("Found %s at pointer: %p (%c)\n", str2, foundPtr, *foundPtr);
+
     return 0;
 }
