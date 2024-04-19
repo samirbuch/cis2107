@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "lib/str_utils.h"
 
 int main() {
@@ -46,6 +47,22 @@ int main() {
 
     char *foundPtr = ptr_to(str1, str2);
     printf("Found %s at pointer: %p (%c)\n", str2, foundPtr, *foundPtr);
+
+    char notEmpty[] = "Not empty!";
+    char empty[] = "";
+    printf("Is \"%s\" empty? %d\n", notEmpty, is_empty(notEmpty));
+    printf("Is \"%s\" empty? %d\n", empty, is_empty(empty));
+
+    char spongebob[] = "Spongebob";
+    char patrick[] = "Patrick";
+    char *zipped = str_zip(spongebob, patrick);
+    printf("Zipped: %s\n", zipped);
+    free(zipped);
+
+    // the quick brown dog...
+    char sphinx[] = "sphinx of black quartz judge my vow";
+    capitalize(sphinx);
+    printf("Proper case-d: %s\n", sphinx);
 
     return 0;
 }

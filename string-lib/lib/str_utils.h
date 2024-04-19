@@ -40,6 +40,20 @@ void s_strncpy(char* dest, const char* src, size_s n);
 int strequal(const char* s1, const char* s2);
 
 /**
+ * Converts character to its lowercase equivalent
+ * @param c Character to convert
+ * @return Lowercase character
+ */
+char tolower(char c);
+
+/**
+ * Converts character to its uppercase equivalent
+ * @param c Character to convert
+ * @return Uppercase character
+ */
+char toupper(char c);
+
+/**
  * Returns 1 if all the characters in the string are either upper- or lower-case letters of the alphabet. 0 otherwise.
  * @param s String to test
  * @return 1 or 0
@@ -119,5 +133,19 @@ char *ptr_to(const char *h, const char *n);
  * @return 1 if only whitespace, 0 otherwise.
  */
 int is_empty(const char *s);
+
+/**
+ * Returns a new string with s1 & s2 interleaved with each other
+ * @param s1 String 1 to interleave
+ * @param s2 String 2 to interleave
+ * @return New string
+ */
+char *str_zip(const char *s1, const char *s2);
+
+/**
+ * Changes s such that the first letter of each word is uppercase and each additional letter is lowercase
+ * @param s String to modify
+ */
+void capitalize(char *s);
 
 #endif //STRING_LIB_STR_UTILS_H
