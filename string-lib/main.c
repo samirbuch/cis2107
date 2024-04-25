@@ -79,5 +79,10 @@ int main() {
     take_last(lastN, 5);
     printf("%s\n", lastN);
 
+    char duplicated[] = "ABABABABABA CDCDCDCDCD EFEFEFEFEF GGG HHH III";
+    char *deduplicated = dedup(duplicated);
+    printf("Deduplicated: %s\n", deduplicated);
+    free(deduplicated);
+
     return 0;
 }

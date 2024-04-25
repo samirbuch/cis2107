@@ -126,12 +126,19 @@ int strcmp_ign_case(const char *s1, const char *s2);
 void take_last(char *s, int n);
 
 /**
+ * Deduplicate the characters in s
+ * @param s The string to remove duplicate characters from
+ * @return A new string with no duplicate characters. Must be freed when finished!
+ */
+char *dedup(const char *s);
+
+/**
  * Returns a copy of s with each instance of the given pattern replaced with the given replacement
  * The pattern and replacement MUST be the same length! Differing lengths are not implemented.
  * @param s String to copy
  * @param pattern Pattern to search for
  * @param replacement String to replace the patterns with
- * @return Pointer to a new string with the patterns replaced. S_NULL if it fails.
+ * @return Pointer to a new string with the patterns replaced. S_NULL if it fails. Must be freed when finished!
  */
 char *replace(const char *s, const char *pattern, const char *replacement);
 

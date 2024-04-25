@@ -27,4 +27,5 @@ add_executable(string_lib main.c
         lib/replace.c
         lib/reimpl/s_strcpy.c
         lib/take_last.c
+        lib/dedup.c
 )
