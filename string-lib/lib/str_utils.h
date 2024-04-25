@@ -124,6 +124,13 @@ char *str_zip(const char *s1, const char *s2);
  */
 void capitalize(char *s);
 
+/**
+ * Compare s1 & s2, ignore case.
+ * @param s1 String to compare against s2
+ * @param s2 String to compare against s1
+ * @return 1 if s1 would appear before s2 in a dictionary, -1 if s2 before s1, 0 if equal
+ */
+int strcmp_ign_case(const char *s1, const char *s2);
 
 /**
  * Returns a copy of s with each instance of the given pattern replaced with the given replacement

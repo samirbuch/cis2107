@@ -8,17 +8,8 @@ int find(const char *h, const char *n){
     size_s hLen = s_strlen(h);
     size_s nLen = s_strlen(n);
 
-    // GUESS WHAT TIME IT IS???
-    //
-    // IT'S TIME FOR MY FAVORITE
-    // ALGORITHM OF ALL TIME
-    //
-    // *drumroll*
-    //
-    // THE SLIDING WINDOW ALGORITHM 🎉
-
     for(int i = 0; i < hLen - nLen + 1; i++) {
-        char window[hLen];
+        char window[nLen];
         // yes I had to reimplement strncpy for this.
         // really not the most difficult thing!
         s_strncpy(window, h + i, nLen);
