@@ -28,4 +28,6 @@ add_executable(string_lib main.c
         lib/reimpl/s_strcpy.c
         lib/take_last.c
         lib/dedup.c
+        lib/pad.c
+        lib/reimpl/s_strncat.c
 )

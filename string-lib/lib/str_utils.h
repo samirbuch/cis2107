@@ -133,6 +133,14 @@ void take_last(char *s, int n);
 char *dedup(const char *s);
 
 /**
+ * Creates a new string with all of s and padded with spaces at the end
+ * @param s String to copy
+ * @param d Number of spaces to pad the right of the new string with
+ * @return Pointer to a new string. Must be freed when finished!
+ */
+char *pad(const char *s, size_s d);
+
+/**
  * Returns a copy of s with each instance of the given pattern replaced with the given replacement
  * The pattern and replacement MUST be the same length! Differing lengths are not implemented.
  * @param s String to copy

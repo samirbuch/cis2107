@@ -84,5 +84,9 @@ int main() {
     printf("Deduplicated: %s\n", deduplicated);
     free(deduplicated);
 
+    char *paddedString = pad("aaaaaaaaaaa", 5);
+    printf("Padded string: \"%s\"\n", paddedString);
+    free(paddedString);
+
     return 0;
 }
