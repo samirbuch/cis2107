@@ -29,5 +29,5 @@ add_executable(string_lib main.c
         lib/take_last.c
         lib/dedup.c
         lib/pad.c
-        lib/reimpl/s_strncat.c
+        lib/ends_with_ignore_case.c
 )

@@ -88,5 +88,9 @@ int main() {
     printf("Padded string: \"%s\"\n", paddedString);
     free(paddedString);
 
+    char suffixTestString[] = "I want to be done with this lab so bad";
+    char suffix[] = "SO Bad";
+    printf("Suffix test string ends with suffix? %d\n", ends_with_ignore_case(suffixTestString, suffix));
+
     return 0;
 }

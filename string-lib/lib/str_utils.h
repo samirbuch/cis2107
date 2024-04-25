@@ -141,6 +141,14 @@ char *dedup(const char *s);
 char *pad(const char *s, size_s d);
 
 /**
+ * Determines whether the string s ends with the suffix
+ * @param s String to check
+ * @param suffix Suffix to check against the string
+ * @return 1 if true, 0 if false
+ */
+int ends_with_ignore_case(const char *s, const char *suffix);
+
+/**
  * Returns a copy of s with each instance of the given pattern replaced with the given replacement
  * The pattern and replacement MUST be the same length! Differing lengths are not implemented.
  * @param s String to copy
