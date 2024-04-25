@@ -9,7 +9,7 @@ char *ptr_to(const char *h, const char *n) {
     size_s nLen = s_strlen(n);
 
     for (int i = 0; i < hLen - nLen + 1; i++) {
-        char window[hLen];
+        char window[nLen];
         // yes I had to reimplement strncpy for this.
         // really not the most difficult thing!
         s_strncpy(window, h + i, nLen);
