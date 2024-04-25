@@ -70,9 +70,14 @@ int main() {
     char patternSearch[] = "me";
     char replaceWith[] = "it";
     char* replacedString = replace(replaceMe, patternSearch, replaceWith);
-    printf("Replacing instances of %s with %s in:\n%s:\n%s",
+    printf("Replacing instances of %s with %s in:\n%s:\n%s\n",
            patternSearch, replaceWith, replaceMe, replacedString);
     free(replacedString);
+
+    char lastN[] = "abc def ghi jkl mno pqr";
+    printf("Taking the last 5 characters of %s: ", lastN);
+    take_last(lastN, 5);
+    printf("%s\n", lastN);
 
     return 0;
 }

@@ -119,6 +119,13 @@ void capitalize(char *s);
 int strcmp_ign_case(const char *s1, const char *s2);
 
 /**
+ * Modify the string s such that it only consists of the last n characters
+ * @param s String to modify
+ * @param n Number of characters to pick from the end of the string
+ */
+void take_last(char *s, int n);
+
+/**
  * Returns a copy of s with each instance of the given pattern replaced with the given replacement
  * The pattern and replacement MUST be the same length! Differing lengths are not implemented.
  * @param s String to copy
