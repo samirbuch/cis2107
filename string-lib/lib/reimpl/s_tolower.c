@@ -5,5 +5,6 @@
 #include "../str_utils.h"
 
 char s_tolower(char c) {
-    return (char) ((int) c + 32);
+    if(c >= 'A' && c <= 'Z') return (char) ((int) c + 32); // If it's uppercase, make it lowercase.
+    else return c; // If it's not within the uppercase alphabet, pass it through.
 }

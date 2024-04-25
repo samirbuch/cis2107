@@ -22,6 +22,7 @@ add_executable(string_lib main.c
         lib/capitalize.c
         lib/reimpl/s_tolower.c
         lib/reimpl/s_toupper.c
+        lib/strcmp_ign_case.c
         lib/reimpl/reimpl.h
         lib/replace.c
         lib/reimpl/s_strcpy.c

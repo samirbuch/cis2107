@@ -20,6 +20,8 @@ int main() {
     char fakeString[] = "Rich Hair State Service";
     size_s difference = diff(realString, fakeString);
     printf("Diff between: \n\t%s\n\t%s\n%d\n", realString, fakeString, difference);
+    int comparison = strcmp_ign_case(realString, fakeString);
+    printf("Comparison: %d\n", comparison);
 
     // Shorten the real string
     shorten(realString, 9);

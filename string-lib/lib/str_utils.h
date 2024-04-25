@@ -16,20 +16,6 @@
 int strequal(const char* s1, const char* s2);
 
 /**
- * Converts character to its lowercase equivalent
- * @param c Character to convert
- * @return Lowercase character
- */
-char tolower(char c);
-
-/**
- * Converts character to its uppercase equivalent
- * @param c Character to convert
- * @return Uppercase character
- */
-char toupper(char c);
-
-/**
  * Returns 1 if all the characters in the string are either upper- or lower-case letters of the alphabet. 0 otherwise.
  * @param s String to test
  * @return 1 or 0
@@ -128,7 +114,7 @@ void capitalize(char *s);
  * Compare s1 & s2, ignore case.
  * @param s1 String to compare against s2
  * @param s2 String to compare against s1
- * @return 1 if s1 would appear before s2 in a dictionary, -1 if s2 before s1, 0 if equal
+ * @return 1 if s1 would appear before s2 in a dictionary, -1 if s1 after s2, 0 if equal
  */
 int strcmp_ign_case(const char *s1, const char *s2);
 
