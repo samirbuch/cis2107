@@ -4,6 +4,6 @@
 
 #include "../str_utils.h"
 
-char tolower(char c) {
+char s_tolower(char c) {
     return (char) ((int) c + 32);
 }

@@ -5,31 +5,7 @@
 #ifndef STRING_LIB_STR_UTILS_H
 #define STRING_LIB_STR_UTILS_H
 
-#define S_NULL ((void *)0)
-typedef unsigned int size_s;
-
-/**
- * Return the length of a string, not including the null character at the end.
- * @param str String to check
- * @return Integer length of the string
- */
-size_s s_strlen(const char* str);
-
-/**
- * Return the length of a string up to and including n, not including the null character at the end.
- * @param str String to check
- * @param n Maximum length
- * @return Integer length of the string
- */
-size_s s_strnlen(const char* str, size_s n);
-
-/**
- * Copy only n characters from the source string into the destination string
- * @param dest String to copy to
- * @param src String to copy from
- * @param n How many characters should be copied
- */
-void s_strncpy(char* dest, const char* src, size_s n);
+#include "./reimpl/reimpl.h"
 
 /**
  * Determines if two strings are exactly equal

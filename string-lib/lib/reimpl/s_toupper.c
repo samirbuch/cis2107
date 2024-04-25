@@ -4,6 +4,6 @@
 
 #include "../str_utils.h"
 
-char toupper(char c) {
+char s_toupper(char c) {
     return (char) ((int) c - 32);
 }

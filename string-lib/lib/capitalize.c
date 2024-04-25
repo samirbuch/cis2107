@@ -4,13 +4,11 @@
 
 #include "str_utils.h"
 
-int is_upper(char c);
-
 void capitalize(char *s) {
     size_s len = s_strlen(s);
 
     // Make the first character uppercase
-    s[0] = toupper(s[0]);
+    s[0] = s_toupper(s[0]);
 
     int shouldUppercaseNextLetter = 0;
     for(int i = 1; i < len; i++) {
@@ -21,12 +19,8 @@ void capitalize(char *s) {
         }
 
         if(shouldUppercaseNextLetter == 1) {
-            s[i] = toupper(s[i]);
+            s[i] = s_toupper(s[i]);
             shouldUppercaseNextLetter = 0;
         }
     }
-}
-
-int is_upper(char c) {
-    return c >= 65 && c <= 90 ? 1 : 0;
 }
