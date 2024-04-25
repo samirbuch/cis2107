@@ -20,11 +20,9 @@ add_executable(string_lib main.c
         lib/is_empty.c
         lib/str_zip.c
         lib/capitalize.c
-        lib/reimpl/tolower.c
-        lib/reimpl/toupper.c
         lib/reimpl/s_tolower.c
         lib/reimpl/s_toupper.c
         lib/reimpl/reimpl.h
         lib/replace.c
-        lib/reimpl/strcpy.c
+        lib/reimpl/s_strcpy.c
 )

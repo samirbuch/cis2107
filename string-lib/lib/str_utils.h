@@ -124,4 +124,15 @@ char *str_zip(const char *s1, const char *s2);
  */
 void capitalize(char *s);
 
+
+/**
+ * Returns a copy of s with each instance of the given pattern replaced with the given replacement
+ * The pattern and replacement MUST be the same length! Differing lengths are not implemented.
+ * @param s String to copy
+ * @param pattern Pattern to search for
+ * @param replacement String to replace the patterns with
+ * @return Pointer to a new string with the patterns replaced. S_NULL if it fails.
+ */
+char *replace(const char *s, const char *pattern, const char *replacement);
+
 #endif //STRING_LIB_STR_UTILS_H

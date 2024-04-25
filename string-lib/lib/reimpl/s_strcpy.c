@@ -4,6 +4,14 @@
 
 #include "reimpl.h"
 
+void s_strcpy(char* dest, const char* src) {
+    size_s src_len = s_strlen(src);
+
+    for(int i = 0; i < src_len; i++) {
+        dest[i] = src[i];
+    }
+}
+
 void s_strncpy(char* dest, const char* src, size_s n) {
     for(int i = 0; i < n; i++){
         dest[i] = src[i];

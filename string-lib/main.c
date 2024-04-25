@@ -64,5 +64,13 @@ int main() {
     capitalize(sphinx);
     printf("Proper case-d: %s\n", sphinx);
 
+    char replaceMe[] = "replace me with me";
+    char patternSearch[] = "me";
+    char replaceWith[] = "it";
+    char* replacedString = replace(replaceMe, patternSearch, replaceWith);
+    printf("Replacing instances of %s with %s in:\n%s:\n%s",
+           patternSearch, replaceWith, replaceMe, replacedString);
+    free(replacedString);
+
     return 0;
 }

@@ -16,12 +16,11 @@ typedef unsigned int size_s;
 size_s s_strlen(const char* str);
 
 /**
- * Return the length of a string up to and including n, not including the null character at the end.
- * @param str String to check
- * @param n Maximum length
- * @return Integer length of the string
+ * Copies characters from the source string into the destination buffer
+ * @param dest Destination buffer
+ * @param src Source string
  */
-size_s s_strnlen(const char* str, size_s n);
+void s_strcpy(char* dest, const char* src);
 
 /**
  * Copies n characters from the source string into the destination buffer
