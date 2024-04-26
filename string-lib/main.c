@@ -92,5 +92,11 @@ int main() {
     char suffix[] = "SO Bad";
     printf("Suffix test string ends with suffix? %d\n", ends_with_ignore_case(suffixTestString, suffix));
 
+    char strToRepeat[] = "all right";
+    char separator = ',';
+    char *repeated = repeat(strToRepeat, 3, separator);
+    printf("Repeated: \"%s\"\n", repeated);
+    free(repeated);
+
     return 0;
 }

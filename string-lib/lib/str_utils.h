@@ -149,6 +149,15 @@ char *pad(const char *s, size_s d);
 int ends_with_ignore_case(const char *s, const char *suffix);
 
 /**
+ * Returns a new string, which is s repeated x times with sep in between.
+ * @param s The string to repeat
+ * @param x The number of times to repeat s
+ * @param sep The character to put between each repetition
+ * @return A new string. Must be freed when finished!
+ */
+char *repeat(char *s, int x, char sep);
+
+/**
  * Returns a copy of s with each instance of the given pattern replaced with the given replacement
  * The pattern and replacement MUST be the same length! Differing lengths are not implemented.
  * @param s String to copy

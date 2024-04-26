@@ -30,4 +30,5 @@ add_executable(string_lib main.c
         lib/dedup.c
         lib/pad.c
         lib/ends_with_ignore_case.c
+        lib/repeat.c
 )
