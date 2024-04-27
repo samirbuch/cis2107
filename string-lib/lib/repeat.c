@@ -19,6 +19,7 @@ char *repeat(char *s, int x, char sep) {
         // Read the string to be repeated into the proper location in the buffer
         for(int sIndex = 0; sIndex < sLen; sIndex++) {
             buffer[sIndex + (i * sLen) + i] = s[sIndex];
+            // I'm sure this would be way easier if I reimplemented strcat but i CBA
         }
         // Insert the separator
         if(i != x - 1) // only if we're not in the last iteration

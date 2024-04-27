@@ -98,5 +98,14 @@ int main() {
     printf("Repeated: \"%s\"\n", repeated);
     free(repeated);
 
+    char *toConnect[] = { "hello", "professor", "ajaj!", "cool", "lab!" };
+    char *connected = str_connect(toConnect, 5, '+');
+    printf("Connected: \"%s\"\n", connected);
+    free(connected);
+
+    char *toConnect2[] = { "Washington", "Adams", "Jefferson" };
+    char *connected2 = str_connect(toConnect2, 3, '+');
+    printf("Connected: \"%s\"\n", connected2);
+
     return 0;
 }

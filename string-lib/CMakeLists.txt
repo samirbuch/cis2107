@@ -31,4 +31,5 @@ add_executable(string_lib main.c
         lib/pad.c
         lib/ends_with_ignore_case.c
         lib/repeat.c
+        lib/str_connect.c
 )

@@ -167,4 +167,13 @@ char *repeat(char *s, int x, char sep);
  */
 char *replace(const char *s, const char *pattern, const char *replacement);
 
+/**
+ * Create a new string consisting of n strings in strs connected by the character c
+ * @param strs The strings to connect
+ * @param n The first n strings in strs to connect
+ * @param c The separator character
+ * @return A new completed string. S_NULL if failure. Must be freed when finished!
+ */
+char *str_connect(char **strs, int n, char c);
+
 #endif //STRING_LIB_STR_UTILS_H
