@@ -15,7 +15,7 @@ will produce the expected `libstrutils.a` file.
 
 Running the following command will generate a binary that has the
 strutils library linked against it:
-$ gcc -o str_tester main.c -L. -lstrutils
+> $ gcc -o str_tester main.c -L. -lstrutils
 
 Then, naturally, run `./str_tester` and see that the code runs as expected.
 
