@@ -14,12 +14,12 @@ int main() {
 
     char abcStr[] = "ABC ABC DEF ABC";
     size_t num_range = num_in_range(abcStr, 'A', 'C');
-    printf("%s contains %d characters between a and c\n", abcStr, num_range);
+    printf("%s contains %zu characters between a and c\n", abcStr, num_range);
 
     char realString[] = "Rich Heir Estate Services";
     char fakeString[] = "Rich Hair State Service";
     size_t difference = diff(realString, fakeString);
-    printf("Diff between: \n\t%s\n\t%s\n%d\n", realString, fakeString, difference);
+    printf("Diff between: \n\t%s\n\t%s\n%zu\n", realString, fakeString, difference);
     int comparison = strcmp_ign_case(realString, fakeString);
     printf("Comparison: %d\n", comparison);
 
@@ -27,7 +27,7 @@ int main() {
     shorten(realString, 9);
     printf("Shortened string: %s\n", realString);
 
-    printf("Length diff between s1 & s2: %u\n", len_diff(realString, fakeString));
+    printf("Length diff between s1 & s2: %zu\n", len_diff(realString, fakeString));
 
     char strWithLeftSpaces[] = "        left space!";
     rm_left_space(strWithLeftSpaces);
