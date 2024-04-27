@@ -6,7 +6,7 @@
 #include "str_utils.h"
 
 char *dedup(const char *s) {
-    size_s sLen = s_strlen(s);
+    size_t sLen = s_strlen(s);
 
     char *new_buffer = calloc(128, sizeof(char)); // realistically, char should always be size 1. but you never know.
 

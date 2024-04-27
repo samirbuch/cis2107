@@ -10,8 +10,8 @@
 // For example, if s1 is "Spongebob" and s2 is "Patrick",
 // the function returns the string "SPpaotnrgiecbkob"
 char *str_zip(const char *s1, const char *s2) {
-    size_s s1Len = s_strlen(s1);
-    size_s s2Len = s_strlen(s2);
+    size_t s1Len = s_strlen(s1);
+    size_t s2Len = s_strlen(s2);
 
     char *zipped = calloc(s1Len + s2Len, sizeof(char));
 

@@ -6,7 +6,7 @@
 #include "str_utils.h"
 
 void shorten(char* s, int new_len) {
-    size_s length = s_strlen(s);
+    size_t length = s_strlen(s);
     if(length <= new_len) return;
 
     *(s + new_len + 1) = '\0';

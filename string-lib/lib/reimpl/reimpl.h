@@ -6,14 +6,17 @@
 #define STRING_LIB_REIMPL_H
 
 #define S_NULL ((void *)0)
-typedef unsigned int size_s;
+
+#ifndef size_t
+typedef unsigned long size_t;
+#endif
 
 /**
  * Return the length of a string, not including the null character at the end.
  * @param str String to check
  * @return Integer length of the string
  */
-size_s s_strlen(const char* str);
+size_t s_strlen(const char* str);
 
 /**
  * Copies characters from the source string into the destination buffer
@@ -28,7 +31,7 @@ void s_strcpy(char* dest, const char* src);
  * @param src Source string
  * @param n Maximum number of characters to copy
  */
-void s_strncpy(char* dest, const char* src, size_s n);
+void s_strncpy(char* dest, const char* src, size_t n);
 
 /**
  * Converts character to its lowercase equivalent

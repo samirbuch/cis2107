@@ -5,8 +5,8 @@
 #include "../str_utils.h"
 
 int strequal(const char* s1, const char* s2) {
-    size_s s1Len = s_strlen(s1);
-    size_s s2Len = s_strlen(s2);
+    size_t s1Len = s_strlen(s1);
+    size_t s2Len = s_strlen(s2);
 
     if(s1Len != s2Len) return 0;
 

@@ -12,8 +12,8 @@ int min(int a, int b) {
 // THANK YOU, https://arc.net/l/quote/khevfpgf
 int diff(const char *s1, const char *s2) {
     // Calculate lengths of the strings
-    size_s s1Length = s_strlen(s1);
-    size_s s2Length = s_strlen(s2);
+    size_t s1Length = s_strlen(s1);
+    size_t s2Length = s_strlen(s2);
 
     // Create the 2d array to store the data
     int d[s1Length + 1][s2Length + 1];

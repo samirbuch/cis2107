@@ -6,8 +6,8 @@
 #include <stdlib.h>
 
 char *replace(const char *s, const char *pattern, const char *replacement) {
-    size_s patternLen = s_strlen(pattern);
-    size_s replacementLen = s_strlen(replacement);
+    size_t patternLen = s_strlen(pattern);
+    size_t replacementLen = s_strlen(replacement);
 
     if (patternLen != replacementLen) {
         return S_NULL;
@@ -18,7 +18,7 @@ char *replace(const char *s, const char *pattern, const char *replacement) {
 
     while (ptr_to(s, pattern) != S_NULL) {
         int found_index = find(new_buffer, pattern);
-        for (size_s i = 0; i < s_strlen(pattern); i++) {
+        for (size_t i = 0; i < s_strlen(pattern); i++) {
             new_buffer[i + found_index] = *(replacement++);
         }
 
@@ -31,11 +31,11 @@ char *replace(const char *s, const char *pattern, const char *replacement) {
 
 //char *replace(char *s, char *pattern, char *replacement) {
 //
-//    size_s sLen = s_strlen(s);
-//    size_s patternLen = s_strlen(pattern);
-//    size_s replacementLen = s_strlen(replacement);
+//    size_t sLen = s_strlen(s);
+//    size_t patternLen = s_strlen(pattern);
+//    size_t replacementLen = s_strlen(replacement);
 //
-//    size_s bufferLength = sLen;
+//    size_t bufferLength = sLen;
 //    char *new_buffer = calloc(bufferLength, sizeof(char));
 //
 //    s_strcpy(new_buffer, s);
@@ -44,7 +44,7 @@ char *replace(const char *s, const char *pattern, const char *replacement) {
 //
 //    while((p = ptr_to(s, pattern)) != S_NULL) {
 //        s = p; // Move the string s to the found pointer
-//        size_s pLen = s_strlen(p);
+//        size_t pLen = s_strlen(p);
 //
 //        // If the current buffer length minus the pattern length plus replacement length
 //        // is greater than the current buffer length, we need to reallocate
@@ -62,8 +62,8 @@ char *replace(const char *s, const char *pattern, const char *replacement) {
 //        if(replacementLen > patternLen) {
 //            char *ptr_in_new_buffer = ptr_to(new_buffer, pattern);
 //            ptr_in_new_buffer += replacementLen - patternLen;
-//            size_s remainingLength = s_strlen(ptr_in_new_buffer);
-//            for(size_s i = remainingLength; i > 0; i--) {
+//            size_t remainingLength = s_strlen(ptr_in_new_buffer);
+//            for(size_t i = remainingLength; i > 0; i--) {
 //
 //            }
 //        }

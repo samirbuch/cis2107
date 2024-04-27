@@ -5,8 +5,8 @@
 #include "str_utils.h"
 
 int ends_with_ignore_case(const char *s, const char *suffix) {
-    size_s sLen = s_strlen(s);
-    size_s suffixLen = s_strlen(suffix);
+    size_t sLen = s_strlen(s);
+    size_t suffixLen = s_strlen(suffix);
 
     char s_lowercase[sLen + 1];
     char suffix_lowercase[suffixLen + 1];
@@ -22,7 +22,7 @@ int ends_with_ignore_case(const char *s, const char *suffix) {
     suffix_lowercase[suffixLen + 1] = '\0';
 
     int suffixCounter = 0;
-    for(size_s i = sLen - suffixLen; i < sLen; i++) {
+    for(size_t i = sLen - suffixLen; i < sLen; i++) {
         if(s_lowercase[i] != suffix_lowercase[suffixCounter++])
             return 0;
     }

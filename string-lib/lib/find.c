@@ -5,8 +5,8 @@
 #include "str_utils.h"
 
 int find(const char *h, const char *n){
-    size_s hLen = s_strlen(h);
-    size_s nLen = s_strlen(n);
+    size_t hLen = s_strlen(h);
+    size_t nLen = s_strlen(n);
 
     for(int i = 0; i < hLen - nLen + 1; i++) {
         char window[nLen];

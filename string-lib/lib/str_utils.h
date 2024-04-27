@@ -30,7 +30,7 @@ short all_letters(const char *s);
  * @param t Upper bound of characters to test for
  * @return Number of characters in s1 between b and t
  */
-size_s num_in_range(const char *s1, char b, char t);
+size_t num_in_range(const char *s1, char b, char t);
 
 /**
  * Returns the number of positions in which s1 and s2 differ, i.e. number of changes (substitutions, additions, subtractions) necessary to transform s1 into s2.
@@ -53,7 +53,7 @@ void shorten(char* s, int new_len);
  * @param s2 String 2
  * @return Difference in length
  */
-size_s len_diff(const char* s1, const char* s2);
+size_t len_diff(const char* s1, const char* s2);
 
 /**
  * Removes whitespace characters from the beginning of s
@@ -138,7 +138,7 @@ char *dedup(const char *s);
  * @param d Number of spaces to pad the right of the new string with
  * @return Pointer to a new string. Must be freed when finished!
  */
-char *pad(const char *s, size_s d);
+char *pad(const char *s, size_t d);
 
 /**
  * Determines whether the string s ends with the suffix

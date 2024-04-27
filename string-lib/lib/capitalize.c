@@ -5,7 +5,7 @@
 #include "str_utils.h"
 
 void capitalize(char *s) {
-    size_s len = s_strlen(s);
+    size_t len = s_strlen(s);
 
     // Make the first character uppercase
     s[0] = s_toupper(s[0]);
