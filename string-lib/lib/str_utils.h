@@ -176,4 +176,10 @@ char *replace(const char *s, const char *pattern, const char *replacement);
  */
 char *str_connect(char **strs, int n, char c);
 
+/**
+ * Removes any empty strings from the words array
+ * @param words The array to modify
+ */
+void rm_empties(char **words);
+
 #endif //STRING_LIB_STR_UTILS_H

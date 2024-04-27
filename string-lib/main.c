@@ -107,5 +107,13 @@ int main() {
     char *connected2 = str_connect(toConnect2, 3, '+');
     printf("Connected: \"%s\"\n", connected2);
 
+    char *empties[] = { "a", "", "bbbbb", "cc", "", "", "dd", S_NULL };
+    rm_empties(empties);
+    printf("Array of words after removing empties: ");
+    for(int i = 0; empties[i] != S_NULL; i++) {
+        printf("\"%s\" ", empties[i]);
+    }
+    printf("\n");
+
     return 0;
 }
